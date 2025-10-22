@@ -27,3 +27,30 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+// Исправление кнопки выхода
+document.addEventListener('DOMContentLoaded', function() {
+    // Находим все кнопки выхода
+    const logoutLinks = document.querySelectorAll('a[href="login.html"]');
+    
+    logoutLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            // Удаляем данные пользователя
+            localStorage.removeItem('currentUser');
+            // Перенаправляем на страницу входа
+            window.location.href = 'login.html';
+        });
+    });
+    
+    // Добавляем красивый hover эффект для всех кнопок
+    const buttons = document.querySelectorAll('.btn');
+    buttons.forEach(btn => {
+        btn.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-2px)';
+        });
+        
+        btn.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+        });
+    });
+});
