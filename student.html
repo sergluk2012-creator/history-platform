@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Личный кабинет - Историум</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>🎓 Личный кабинет</h1>
+                <span id="studentInfo"></span>
+            </div>
+            <nav class="nav">
+                <span id="studentNameDisplay"></span>
+                <a href="login.html" class="btn">Выйти</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container" style="margin-top: 100px;">
+        <div class="dashboard">
+            <div class="stats-cards">
+                <div class="stat-card">
+                    <div class="stat-number" id="completedTasks">0</div>
+                    <div class="stat-label">Выполнено заданий</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="correctPercentage">0%</div>
+                    <div class="stat-label">Правильных ответов</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="theoryRead">0</div>
+                    <div class="stat-label">Изучено тем</div>
+                </div>
+            </div>
+
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="materials">Теория</button>
+                <button class="tab-btn" data-tab="practice">Практика</button>
+                <button class="tab-btn" data-tab="progress">Мой прогресс</button>
+            </div>
+
+            <!-- Теория -->
+            <div id="materials" class="tab-content active">
+                <div class="card">
+                    <h3>Учебные материалы</h3>
+                    <div id="studentTheoryList">
+                        <!-- Теория для ученика -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Практика -->
+            <div id="practice" class="tab-content">
+                <div class="card">
+                    <h3>Задания для выполнения</h3>
+                    <div id="studentTasksList">
+                        <!-- Задания для ученика -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Прогресс -->
+            <div id="progress" class="tab-content">
+                <div class="card">
+                    <h3>Моя статистика</h3>
+                    <div id="studentProgress">
+                        <!-- Прогресс ученика -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно для задания -->
+    <div id="taskModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3 id="modalTaskTitle">Задание</h3>
+            <div id="modalTaskContent"></div>
+            <form id="taskAnswerForm">
+                <div id="answerInputs"></div>
+                <button type="submit" class="btn btn-primary mt-1">Отправить ответ</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/student.js"></script>
+</body>
+</html>
